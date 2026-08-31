@@ -4,25 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>X-Men '97 - Danger Room Simulator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Cinzel:wght@700&family=Teko:wght@600&display=swap" rel="stylesheet">
+    <!-- Fuentes: Bangers (Cómic), Cinzel (Nombres), Teko (UI) y Press Start 2P (Arcade) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Cinzel:wght@700&family=Press+Start+2P&family=Teko:wght@600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- PANTALLA DE INICIO (VERSUS) -->
-    <div id="intro-screen" class="intro-screen">
-        <h1 class="intro-title">SALA DE PELIGRO</h1>
-        <div class="vs-container">
-            <div class="vs-fighter hero-intro">MUTANTE X</div>
-            <div class="vs-badge">VS</div>
-            <div class="vs-fighter boss-intro">CENTINELA MK-I</div>
+    <!-- PANTALLA DE INICIO (STREET FIGHTER VIBES) -->
+    <div id="intro-screen" class="sf-intro">
+        <!-- Fondo diagonal dividido -->
+        <div class="sf-bg">
+            <div class="sf-bg-blue"></div>
+            <div class="sf-bg-red"></div>
         </div>
-        <button id="start-btn" class="btn intro-btn">INICIAR SIMULACIÓN</button>
+        
+        <!-- Contenido VS -->
+        <div class="sf-content">
+            <div class="sf-player">
+                <div class="sf-portrait p1-port"></div>
+                <div class="sf-name-box">
+                    <span class="sf-player-tag">1P</span>
+                    <h2 class="sf-name p1-name">MUTANTE X</h2>
+                </div>
+            </div>
+            
+            <div class="sf-vs-badge">VS</div>
+            
+            <div class="sf-player">
+                <div class="sf-portrait p2-port"></div>
+                <div class="sf-name-box text-right">
+                    <span class="sf-player-tag">CPU</span>
+                    <h2 class="sf-name p2-name">CENTINELA</h2>
+                </div>
+            </div>
+        </div>
+
+        <button id="start-btn" class="sf-start-btn">
+            <span style="color: #fff;">INSERT COIN</span><br><br>
+            <span class="blink" style="color: #ffeb3b;">PRESS START</span>
+        </button>
     </div>
 
-    <!-- ANUNCIADOR (READY? FIGHT!) -->
-    <div id="fight-announcer" class="announcer hidden">READY?</div>
+    <!-- ANUNCIADOR (NIVEL 1... FIGHT!) -->
+    <div id="fight-announcer" class="sf-announcer hidden">NIVEL 1</div>
 
     <div class="comic-bg"></div>
     <div class="grid-lines"></div>
@@ -41,6 +66,7 @@
         </div>
 
         <main class="arena">
+            <!-- JUGADOR -->
             <div id="p1" class="fighter p1 idle">
                 <div class="slash-fx"></div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420">
@@ -91,6 +117,7 @@
                 </svg>
             </div>
 
+            <!-- JEFE -->
             <div id="p2" class="fighter p2 idle">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 500" width="450" height="500">
                     <defs>
