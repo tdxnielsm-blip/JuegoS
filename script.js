@@ -1,57 +1,46 @@
-// --- BANCO DE PREGUNTAS (40 PREGUNTAS SENA TRIMESTRES 1 Y 2) ---
+// --- BANCO DE PREGUNTAS (40 PREGUNTAS: LICENCIAMIENTO DE SOFTWARE) ---
 const bancoDePreguntas = [
-    // --- LÓGICA Y ALGORITMIA ---
-    { q: "¿Cuál es la función del operador módulo (%) en programación?", o: ["Calcular un porcentaje", "Obtener el residuo de una división entera", "Dividir dos números decimales", "Elevar un número a una potencia"], a: 1 },
-    { q: "En algoritmia, ¿cuándo se utiliza la estructura repetitiva 'mientras' (while)?", o: ["Cuando se conoce exactamente el número de repeticiones", "Cuando no se conoce con certeza la cantidad de iteraciones", "Únicamente cuando se trabajan arreglos numéricos", "Nunca, funciona exactamente igual al bucle for"], a: 1 },
-    { q: "¿Qué resultado devuelve la expresión lógica: (5 > 2) && (4 < 1)?", o: ["verdadero (true)", "falso (false)", "null", "undefined"], a: 1 },
-    { q: "En la mayoría de lenguajes de programación, ¿cuál es el índice inicial de un arreglo (array)?", o: ["1", "-1", "0", "Depende del tamaño"], a: 2 },
-    { q: "¿Cómo se define formalmente un algoritmo?", o: ["Un programa compilado en código máquina", "Una secuencia finita, precisa y ordenada de pasos para resolver un problema", "Un diagrama exclusivo de bases de datos", "Un error de sintaxis"], a: 1 },
-    { q: "¿Cuál es el propósito fundamental de realizar una prueba de escritorio a un algoritmo?", o: ["Traducir código a HTML", "Verificar la lógica y el flujo de variables manualmente antes de codificar", "Diseñar la interfaz de usuario", "Optimizar el uso de la memoria RAM"], a: 1 },
-    { q: "¿Qué caracteriza a una constante respecto a una variable?", o: ["Su valor cambia en cada iteración", "Su valor asignado no se puede modificar durante la ejecución del programa", "Solo almacena cadenas de texto", "Ocupa el doble de memoria"], a: 1 },
-    { q: "¿Qué estructura condicional es ideal para evaluar múltiples casos de una misma variable?", o: ["if-else", "switch / según", "while", "for-each"], a: 1 },
-    { q: "¿Qué tipo de dato primitivo almacena un valor de verdad (verdadero o falso)?", o: ["String", "Integer", "Boolean", "Float"], a: 2 },
-    { q: "En programación modular, ¿qué es un parámetro dentro de una función?", o: ["El valor de retorno", "Una variable de entrada que la función recibe para procesar", "El nombre asignado a la función", "Un error de compilación"], a: 1 },
-
-    // --- HTML5 Y MAQUETACIÓN WEB ---
-    { q: "¿Qué etiqueta semántica de HTML5 representa la sección de navegación principal?", o: ["<navigation>", "<nav>", "<menu>", "<header>"], a: 1 },
-    { q: "¿Qué atributo es obligatorio en la etiqueta <img> para garantizar la accesibilidad web?", o: ["title", "src", "alt", "description"], a: 2 },
-    { q: "¿Qué etiqueta HTML se utiliza para definir hipervínculos o enlaces?", o: ["<link>", "<a>", "<href>", "<url>"], a: 1 },
-    { q: "¿Cuál es la diferencia entre <input type='checkbox'> y <input type='radio'>?", o: ["Checkbox permite selección múltiple; Radio permite seleccionar solo una opción de un grupo", "Radio permite múltiples selecciones; Checkbox solo una", "Ambos funcionan exactamente igual", "Radio solo sirve para enviar el formulario"], a: 0 },
-    { q: "¿Qué etiqueta HTML se utiliza para estructurar celdas de encabezado en una tabla?", o: ["<td>", "<tr>", "<th>", "<thead_cell>"], a: 2 },
-    { q: "¿Cómo se enlaza correctamente un archivo JavaScript externo a un documento HTML?", o: ["<script href='script.js'></script>", "<script src='script.js'></script>", "<link rel='javascript' href='script.js'>", "<js src='script.js'></js>"], a: 1 },
-    { q: "¿Qué etiqueta semántica HTML5 representa un artículo o contenido independiente?", o: ["<section>", "<div>", "<article>", "<aside>"], a: 2 },
-    { q: "¿Cómo se vincula una hoja de estilos CSS externa en el documento HTML?", o: ["<style src='estilos.css'>", "<link rel='stylesheet' href='estilos.css'>", "<css href='estilos.css'>", "<script src='estilos.css'></script>"], a: 1 },
-
-    // --- REQUISITOS E HISTORIAS DE USUARIO ---
-    { q: "¿Cuál de los siguientes es un ejemplo de Requisito No Funcional?", o: ["El sistema debe permitir registrar usuarios", "El sistema debe procesar las peticiones en menos de 2 segundos", "El usuario puede descargar reportes en PDF", "El administrador puede eliminar registros"], a: 1 },
-    { q: "¿Cuál es la estructura estándar de una Historia de Usuario?", o: ["Como [Rol], quiero [Acción], para [Beneficio]", "Si [Condición], entonces [Resultado], porque [Razón]", "Entrada -> Proceso -> Salida", "Actor -> Caso de Uso -> Sistema"], a: 0 },
-    { q: "En historias de usuario, ¿qué establecen los Criterios de Aceptación?", o: ["Que la funcionalidad fue codificada en el backend", "Las condiciones específicas que deben cumplirse para dar la historia por completada", "La aprobación de colores del diseño", "Que el código no requiere pruebas"], a: 1 },
-    { q: "En un Diagrama de Casos de Uso UML, ¿qué indica la relación <<include>>?", o: ["Una funcionalidad condicional u opcional", "Una funcionalidad obligatoria que el caso de uso base siempre debe ejecutar", "Una herencia entre actores", "Conexión a la base de datos"], a: 1 },
-    { q: "En un Diagrama de Casos de Uso, ¿qué representa la relación <<extend>>?", o: ["Una funcionalidad obligatoria y continua", "Una funcionalidad opcional que amplía la conducta del caso base según una condición", "Una conexión física de red", "La eliminación de un caso de uso"], a: 1 },
-    { q: "¿Qué representa un 'Actor' en un Diagrama de Casos de Uso?", o: ["Únicamente un empleado de la organización", "Cualquier entidad externa (persona o sistema) que interactúa con el software", "Una clase en el código fuente", "El servidor donde reside la aplicación"], a: 1 },
-    { q: "¿Qué técnica de elicitación requiere observar al usuario directamente en su entorno de trabajo real?", o: ["Encuestas", "Observación directa", "Lluvia de ideas", "Prototipado"], a: 1 },
-    { q: "¿Qué estándar internacional se utiliza comúnmente para la Especificación de Requisitos de Software (ERS)?", o: ["ISO 9001", "IEEE 830", "ISO 27001", "IEEE 754"], a: 1 },
-
-    // --- DIAGRAMAS DE CLASES Y POO ---
-    { q: "En un Diagrama de Clases UML, ¿qué símbolo representa la visibilidad PRIVADA?", o: ["+", "-", "#", "~"], a: 1 },
-    { q: "En un Diagrama de Clases UML, ¿qué símbolo representa la visibilidad PÚBLICA?", o: ["-", "#", "+", "*"], a: 2 },
-    { q: "¿Qué pilar de la POO oculta la complejidad interna exponiendo datos solo mediante métodos especificos?", o: ["Herencia", "Encapsulamiento", "Polimorfismo", "Abstracción"], a: 1 },
-    { q: "¿Qué pilar de la POO permite a una clase hija reutilizar atributos y métodos de una clase padre?", o: ["Herencia", "Polimorfismo", "Encapsulamiento", "Instanciación"], a: 0 },
-    { q: "¿Cuál es la diferencia conceptual entre Agregación y Composición en UML?", o: ["Son términos idénticos", "En Composición la clase hija no existe sin la clase padre; en Agregación sí puede existir independientemente", "Agregación es privada y Composición es pública", "La composición solo aplica a bases de datos"], a: 1 },
-    { q: "En Programación Orientada a Objetos, ¿qué es una 'Instancia'?", o: ["La plantilla estructural de la clase", "Un objeto concreto creado a partir de una clase", "Un archivo de texto plano", "Una variable exclusivamente numérica"], a: 1 },
-    { q: "En un Diagrama de Clases, ¿qué indica la multiplicidad '1..*'?", o: ["De cero a uno", "Exactamente uno", "De uno a muchos", "De cero a muchos"], a: 2 },
-    { q: "En UML, ¿qué símbolo representa la visibilidad PROTEGIDA?", o: ["#", "+", "-", "~"], a: 0 },
-
-    // --- BASES DE DATOS RELACIONALES ---
-    { q: "En bases de datos relacionales, ¿cuál es el propósito de la Clave Primaria (Primary Key)?", o: ["Permitir registros duplicados", "Identificar de forma única cada registro en una tabla", "Encriptar la base de datos", "Almacenar datos de tipo texto largo"], a: 1 },
-    { q: "¿Qué función cumple la Clave Foránea (Foreign Key) en un modelo relacional?", o: ["Identificar de forma única la fila actual", "Vincular una tabla con la clave primaria de otra para garantizar la integridad referencial", "Acelerar la velocidad del procesador", "Sustituir la necesidad de consultas SQL"], a: 1 },
-    { q: "Para cumplir con la Primera Forma Normal (1FN), los valores almacenados en cada columna deben ser:", o: ["Atómicos (indivisibles)", "Claves foráneas obligatorias", "Formatos JSON", "Nulos"], a: 0 },
-    { q: "¿Cómo se resuelve una relación de Muchos a Muchos (N:M) en la fase de modelo relacional?", o: ["Se elimina una de las entidades", "Se crea una tabla intermedia que almacena las claves primarias de ambas tablas como FKs", "Se fusionan las tablas en una sola", "Se convierte en una relación 1:1"], a: 1 },
-    { q: "¿A qué categoría del lenguaje SQL pertenecen los comandos CREATE, ALTER y DROP?", o: ["DDL (Data Definition Language)", "DML (Data Manipulation Language)", "DCL (Data Control Language)", "TCL (Transaction Control Language)"], a: 0 },
-    { q: "¿A qué categoría del lenguaje SQL pertenecen los comandos SELECT, INSERT, UPDATE y DELETE?", o: ["DDL (Data Definition Language)", "DML (Data Manipulation Language)", "DCL (Data Control Language)", "TCL (Transaction Control Language)"], a: 1 }
+    { q: "¿Qué significan las siglas EULA en el contexto de software?", o: ["Enterprise User License Access", "End-User License Agreement (Acuerdo de Licencia de Usuario Final)", "Electronic Utility License App", "Encrypted User Local Access"], a: 1 },
+    { q: "¿Cuál es la principal diferencia entre 'Freeware' y 'Software Libre'?", o: ["El Freeware siempre tiene virus", "El Freeware es gratuito pero no permite acceder ni modificar su código fuente", "El Software Libre siempre cuesta dinero", "No hay diferencia, son exactamente lo mismo"], a: 1 },
+    { q: "¿Qué tipo de licencia es el 'Shareware'?", o: ["Software de prueba que se ofrece gratis por un tiempo o con funciones limitadas", "Software de código abierto para compartir libremente", "Software que pertenece al dominio público", "Un virus disfrazado de juego"], a: 0 },
+    { q: "¿Qué característica define al Software Privativo (Propietario)?", o: ["Que solo se puede usar en empresas privadas", "Que su código fuente está cerrado y restringe su modificación y redistribución", "Que es gratuito para todos", "Que obliga a liberar cualquier modificación al público"], a: 1 },
+    { q: "¿Qué es el 'Copyleft'?", o: ["Un error de compilación que borra los derechos de autor", "Una práctica legal que usa los derechos de autor para garantizar que el software y sus derivados sean siempre libres", "El derecho exclusivo a copiar un software y venderlo caro", "Una licencia exclusiva de Microsoft"], a: 1 },
+    { q: "¿Cuál de las siguientes es una licencia de software libre fuertemente restrictiva (Copyleft)?", o: ["Licencia MIT", "Licencia Apache", "Licencia GNU GPL (General Public License)", "EULA Comercial"], a: 2 },
+    { q: "¿Qué característica principal tiene la Licencia MIT?", o: ["Es muy permisiva, permite uso comercial e cerrar el código derivado sin liberar los cambios", "Obliga a que todo el software derivado sea de código abierto", "Prohíbe estrictamente el uso comercial", "Solo se puede usar en universidades"], a: 0 },
+    { q: "Si un software está en el 'Dominio Público', significa que:", o: ["Es un software pirata", "Solo lo puede usar el gobierno", "Sus derechos patrimoniales han expirado o sido renunciados, y cualquiera puede usarlo sin restricciones", "Es gratuito pero no se puede modificar"], a: 2 },
+    { q: "¿Qué tipo de licencia se liga físicamente al hardware original donde se instaló y no se puede transferir a otro PC?", o: ["Retail", "OEM (Original Equipment Manufacturer)", "SaaS", "Open Source"], a: 1 },
+    { q: "¿Qué modelo de distribución representa 'SaaS' (Software as a Service)?", o: ["Comprar un CD-ROM e instalarlo", "Descargar el código fuente y compilarlo", "Pagar una suscripción para usar el software alojado en la nube sin instalarlo localmente", "Un software que solo funciona con hardware libre"], a: 2 },
+    { q: "¿Qué es el 'Abandonware'?", o: ["Software que desinstalas de tu PC", "Software malicioso que secuestra datos", "Software que ya no es comercializado ni recibe soporte por parte de su creador original", "Un tipo de licencia Creative Commons"], a: 2 },
+    { q: "¿Qué significa que una licencia sea 'Open Source' (Código Abierto)?", o: ["Que la aplicación no tiene contraseña de seguridad", "Que el código fuente es accesible para ser estudiado, modificado y distribuido", "Que cualquiera puede robar los datos del usuario", "Que el software siempre debe ser 100% gratuito"], a: 1 },
+    { q: "Las licencias Creative Commons (CC) se utilizan principalmente para:", o: ["Bases de datos SQL de uso restringido", "Patentar hardware tecnológico", "Obras creativas, documentos y recursos multimedia, estandarizando los permisos de uso", "Vender sistemas operativos"], a: 2 },
+    { q: "¿Qué es el 'Adware'?", o: ["Software de edición de video avanzado", "Software gratuito que incluye publicidad obligatoria para monetizar su uso", "Una licencia gubernamental de bases de datos", "Un antivirus de código abierto"], a: 1 },
+    { q: "¿Qué prohíbe explícitamente una licencia comercial típica?", o: ["Instalar el software", "Contactar a soporte técnico", "La ingeniería inversa, copia no autorizada y redistribución", "Actualizar el sistema operativo"], a: 2 },
+    { q: "¿Qué organización es famosa por redactar las licencias GPL y defender el software libre?", o: ["Microsoft Corporation", "La Free Software Foundation (FSF) fundada por Richard Stallman", "La IEEE", "La W3C"], a: 1 },
+    { q: "¿Qué diferencia a una licencia Retail de una OEM?", o: ["La Retail permite transferir el software a un nuevo ordenador si se desinstala del anterior", "La Retail es más barata", "La Retail no tiene manual de usuario", "La Retail caduca a los 30 días"], a: 0 },
+    { q: "¿Qué es la 'Piratería de Software'?", o: ["Navegar en la deep web", "El uso, copia o distribución no autorizada de software protegido por derechos de autor", "Comprar software de segunda mano legalmente", "Usar licencias MIT en proyectos comerciales"], a: 1 },
+    { q: "En licenciamiento, ¿qué son los 'Derechos Morales' de un autor?", o: ["El derecho a cobrar dinero por las ventas", "El derecho irrenunciable a ser reconocido como el creador de la obra y a proteger su integridad", "El derecho a instalar el software en 5 equipos", "El permiso para saltar el EULA"], a: 1 },
+    { q: "¿Cuál es una característica distintiva de la Licencia Apache 2.0 respecto a otras licencias permisivas?", o: ["Que prohíbe su uso en servidores", "Que es obligatoria para páginas web", "Que incluye una concesión expresa y protección sobre patentes de software", "Que cobra un porcentaje de las ganancias del usuario"], a: 2 },
+    { q: "¿Qué significa el acrónimo 'FOSS'?", o: ["Fast Output System Software", "Free and Open Source Software (Software Libre y de Código Abierto)", "Federal Office of Secure Systems", "Financial Open Source Service"], a: 1 },
+    { q: "¿En qué consiste una licencia 'Flotante' (o Concurrente)?", o: ["Solo se puede instalar en barcos o aviones", "El software se instala en múltiples PCs, pero un servidor central limita la cantidad de usuarios que lo usan simultáneamente", "La licencia cambia de precio todos los meses", "Una licencia temporal de 30 días"], a: 1 },
+    { q: "¿Qué es el Licenciamiento Dual (Dual Licensing)?", o: ["Instalar el software en un PC y una Mac al mismo tiempo", "Ofrecer el mismo software bajo dos licencias distintas (ej: una Open Source gratuita y otra Comercial de pago)", "Tener que comprar la licencia dos veces", "Licencias que duran exactamente dos años"], a: 1 },
+    { q: "¿Qué es una Licencia Perpetua?", o: ["Una suscripción que no se puede cancelar jamás", "Pagas una sola vez por el derecho a usar una versión específica del software para siempre", "Un software que nunca se actualiza", "Un contrato que se renueva automáticamente cada mes"], a: 1 },
+    { q: "¿Qué función cumple el DRM (Digital Rights Management) en el software?", o: ["Acelerar la velocidad de descarga", "Tecnología diseñada para controlar el acceso, evitar copias no autorizadas y hacer cumplir las reglas de licenciamiento", "Mejorar la interfaz gráfica del usuario", "Eliminar virus del sistema operativo"], a: 1 },
+    { q: "¿Para qué está diseñada específicamente la licencia AGPL (Affero GPL)?", o: ["Para software instalado exclusivamente en discos locales", "Para obligar a quienes ofrecen el software libre como un servicio web (SaaS) a liberar también sus modificaciones", "Para licenciar hardware físico", "Para privatizar código abierto"], a: 1 },
+    { q: "La licencia CC0 (Creative Commons Zero) equivale funcionalmente a:", o: ["Una licencia OEM", "Dedicar la obra al Dominio Público, renunciando a todos los derechos de autor posibles", "Prohibir el uso comercial de la obra", "Una patente internacional"], a: 1 },
+    { q: "¿Qué es una licencia por volumen (Volume Licensing)?", o: ["Una licencia cuyo precio depende de cuántos GB pesa el software", "Una única clave de licencia que permite a una empresa instalar el software en decenas o cientos de equipos simultáneamente", "Una licencia para software de edición de audio", "Software que solo permite almacenar mucha información"], a: 1 },
+    { q: "¿Qué significa que el código fuente sea 'Source-Available' pero NO 'Open Source'?", o: ["Que el código está escrito a mano", "Que puedes ver el código fuente, pero la licencia restringe cosas clave como el uso comercial o la redistribución", "Que es obligatorio donar dinero al autor", "Que el código no compila y requiere arreglos"], a: 1 },
+    { q: "¿Qué es una CAL (Client Access License) en entornos de red?", o: ["Un permiso de administrador para borrar la base de datos", "Una licencia que permite a un equipo o usuario cliente conectarse legalmente a los servicios de un software de servidor", "Un antivirus de red local", "El protocolo de conexión de internet"], a: 1 },
+    { q: "¿Qué diferencia a la Licencia BSD de la GPL?", o: ["BSD es de pago y GPL es gratuita", "BSD es permisiva (puedes cerrar el código derivado), mientras que GPL exige que los derivados sigan siendo libres", "BSD es solo para juegos y GPL para sistemas", "GPL permite cerrar el código y BSD no"], a: 1 },
+    { q: "¿Qué es una Cláusula de Auditoría en un contrato comercial de software?", o: ["El permiso del usuario para hackear el software", "Una condición que permite al desarrollador revisar los sistemas del cliente para asegurar que no exceden los límites de la licencia", "Un test de rendimiento", "La obligación de enviar reportes de errores (bugs)"], a: 1 },
+    { q: "Según la FSF, la 'Libertad 0' del software libre permite:", o: ["Ejecutar el programa con cualquier propósito, sin restricciones", "Modificar el código fuente", "Redistribuir el programa", "Cobrar dinero por el software"], a: 0 },
+    { q: "¿Qué es el modelo 'Freemium' de licenciamiento?", o: ["Pagar un premium para obtener software libre", "El software base se ofrece gratis de forma permanente, pero las características avanzadas o 'Premium' requieren pago", "Software pirata de alta calidad", "Un seguro de mantenimiento para el software"], a: 1 },
+    { q: "¿Por qué la mayoría de los acuerdos EULA incluyen un 'Disclaimer of Warranty' (Exención de Garantía)?", o: ["Porque el software nunca tiene errores", "Para liberar al creador de responsabilidades legales por daños, pérdida de datos o fallos provocados por el uso del software", "Para garantizar la devolución del dinero", "Para obligar al usuario a usar antivirus"], a: 1 },
+    { q: "¿En qué consiste una licencia ligada a nodo (Node-locked)?", o: ["Se puede instalar en cualquier PC en la red mundial", "La licencia está atada a un identificador único del hardware (como la dirección MAC) y solo funcionará en esa máquina", "Es una licencia para servidores de la NASA", "Permite que cualquier persona en la red la use"], a: 1 },
+    { q: "¿Qué motivó la creación de la GPL versión 3 (GPLv3)?", o: ["Hacer el software más rápido", "Cerrar lagunas legales de la v2 relacionadas con patentes de software, DRM y la 'Tivoización' (hardware que bloquea software modificado)", "Prohibir que el software libre se use en Windows", "Cobrar por el uso del pingüino de Linux"], a: 1 },
+    { q: "¿Qué sucede cuando un EULA estipula licenciamiento 'Per-Core' (por núcleo)?", o: ["El software funciona mejor en procesadores antiguos", "El costo de la licencia de servidor aumenta dependiendo de cuántos núcleos físicos o virtuales tenga el procesador donde se instale", "Solo permite ejecutar un proceso a la vez", "Es exclusivo de Apple"], a: 1 },
+    { q: "¿Qué significa 'hacer un Fork' (bifurcación) de un proyecto Open Source?", o: ["Borrar el repositorio de GitHub", "Tomar una copia del código fuente y comenzar a desarrollarlo de manera paralela e independiente al proyecto original", "Traducir el programa a otro idioma", "Hackear el servidor del creador"], a: 1 },
+    { q: "¿Qué implica el modelo 'Pay-per-use' (Pago por uso) en servicios en la nube?", o: ["Pagar una tarifa fija al mes sin importar cuánto lo uses", "No se paga por la propiedad del software, sino por la cantidad exacta de recursos consumidos (ej. tiempo de procesamiento o peticiones web)", "Solo pagar cuando el software se daña", "Una licencia vitalicia gratuita"], a: 1 }
 ];
-
-// --- LÓGICA DEL MINIJUEGO (SALA DE PELIGRO) ---
 
 const levels = [
     { n: "CENTINELA MK-I", hp: 300, dmg: [20, 35] },
@@ -92,7 +81,7 @@ function createComicText(text, targetId) {
 
 function initLevel() {
     if(lvl >= levels.length) {
-        alert("¡SALA DE PELIGRO COMPLETADA CON ÉXITO ABSOLUTO!");
+        alert("¡JUEGO COMPLETADO! ERES UN MUTANTE NIVEL OMEGA EN LICENCIAMIENTO.");
         location.reload(); return;
     }
     boss = JSON.parse(JSON.stringify(levels[lvl])); boss.mhp = boss.hp;
@@ -154,7 +143,7 @@ function checkState() {
     if(boss.hp <= 0) {
         setTimeout(() => { lvl++; initLevel(); }, 1000);
     } else if (p.hp <= 0) {
-        alert("SISTEMA CRÍTICO. HAS SIDO DERROTADO.");
+        alert("GAME OVER. CONTINUAR? [9... 8...]");
         location.reload();
     } else {
         if(!turn) setTimeout(bossTurn, 500);
@@ -166,9 +155,7 @@ function openTrivia() {
     if(!turn) return;
     
     let pDisp = bancoDePreguntas.filter(pq => !askedQuestions.includes(pq.q));
-    if(pDisp.length === 0) {
-        askedQuestions = []; pDisp = bancoDePreguntas;
-    }
+    if(pDisp.length === 0) { askedQuestions = []; pDisp = bancoDePreguntas; }
 
     const rIdx = Math.floor(Math.random() * pDisp.length);
     currentQuestion = pDisp[rIdx];
@@ -225,12 +212,9 @@ function solveTrivia(sel) {
     }
 }
 
-// --- SECUENCIA DE INICIO (FIGHTING GAME INTRO) ---
-
+// --- SECUENCIA DE INICIO (STREET FIGHTER VIBES) ---
 window.addEventListener('DOMContentLoaded', () => {
-    // Deshabilita los botones del panel inferior al cargar
     setBtns(false);
-    
     const startBtn = document.getElementById('start-btn');
     if(startBtn) {
         startBtn.addEventListener('click', startGameIntro);
@@ -238,32 +222,35 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function startGameIntro() {
-    document.getElementById('intro-screen').classList.add('hidden');
+    // 1. Ocultar pantalla VS
+    const introScreen = document.getElementById('intro-screen');
+    introScreen.style.opacity = '0';
+    setTimeout(() => { introScreen.style.display = 'none'; }, 300);
     
+    // 2. Animar el anunciador tipo Arcade
     const announcer = document.getElementById('fight-announcer');
-    if(announcer) {
+    
+    setTimeout(() => {
         announcer.classList.remove('hidden');
-        announcer.innerText = "READY?";
-        announcer.classList.add('show');
+        announcer.innerText = `NIVEL 1`;
+        announcer.className = 'sf-announcer slide-in';
         
         setTimeout(() => {
-            announcer.classList.remove('show');
-            // Reflow para reiniciar la animación
-            void announcer.offsetWidth;
-            
-            announcer.innerText = "FIGHT!";
-            announcer.style.color = "var(--x-red)";
-            announcer.style.textShadow = "15px 15px 0 var(--x-yellow)";
-            announcer.classList.add('show');
+            // Desliza hacia afuera
+            announcer.className = 'sf-announcer slide-out';
             
             setTimeout(() => {
-                announcer.classList.remove('show');
-                announcer.classList.add('hidden');
-                initLevel(); 
-            }, 1200);
-            
-        }, 1500);
-    } else {
-        initLevel();
-    }
+                // FIGHT! EXPLOSIVO en el centro
+                announcer.innerText = "FIGHT!";
+                announcer.className = 'sf-announcer fight-pop';
+                cameraFx('shake'); // Temblor de cámara
+                
+                setTimeout(() => {
+                    announcer.className = 'sf-announcer hidden';
+                    initLevel(); 
+                }, 1000);
+                
+            }, 300);
+        }, 1200);
+    }, 500);
 }
