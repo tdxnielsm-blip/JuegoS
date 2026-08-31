@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>X-Men '97 - Sala de Peligro: Licenciamiento</title>
     
-    <!-- Fuentes Google Fonts: Bangers (Cómic), Cinzel (Nombres), Teko (UI) y Press Start 2P (Arcade) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Cinzel:wght@700&family=Press+Start+2P&family=Teko:wght@600&display=swap" rel="stylesheet">
@@ -14,17 +13,12 @@
 </head>
 <body>
 
-    <!-- ==========================================
-         PANTALLA DE INICIO (ESTILO STREET FIGHTER)
-         ========================================== -->
+    <!-- Pantalla de Inicio -->
     <div id="intro-screen" class="sf-intro">
-        <!-- Fondo diagonal dividido -->
         <div class="sf-bg">
             <div class="sf-bg-blue"></div>
             <div class="sf-bg-red"></div>
         </div>
-        
-        <!-- Contenido VS -->
         <div class="sf-content">
             <div class="sf-player">
                 <div class="sf-portrait p1-port"></div>
@@ -33,9 +27,7 @@
                     <h2 class="sf-name p1-name">MUTANTE X</h2>
                 </div>
             </div>
-            
             <div class="sf-vs-badge">VS</div>
-            
             <div class="sf-player">
                 <div class="sf-portrait p2-port"></div>
                 <div class="sf-name-box text-right">
@@ -44,25 +36,22 @@
                 </div>
             </div>
         </div>
-
         <button id="start-btn" class="sf-start-btn">
             <span class="insert-text">INSERT COIN</span><br><br>
             <span class="blink press-text">PRESS START</span>
         </button>
     </div>
 
-    <!-- ANUNCIADOR ANIMADO (NIVEL 1... FIGHT!) -->
+    <!-- Anunciador -->
     <div id="fight-announcer" class="sf-announcer hidden">NIVEL 1</div>
 
-
-    <!-- ==========================================
-         ESCENARIO Y CÁMARA PRINCIPAL
-         ========================================== -->
+    <!-- Fondos -->
     <div class="comic-bg"></div>
     <div class="grid-lines"></div>
     
+    <!-- CONTENEDOR PRINCIPAL DEL JUEGO -->
     <div class="camera" id="cam">
-        <!-- HUD: Barras de vida y nombres -->
+        <!-- HUD: Barras de vida fijas arriba -->
         <div class="hud">
             <div class="plate">
                 <div class="name hero">MUTANTE X</div>
@@ -75,12 +64,12 @@
             </div>
         </div>
 
-        <!-- ARENA: Personajes SVG -->
+        <!-- ARENA: Personajes de cuerpo completo -->
         <main class="arena">
             <!-- JUGADOR 1 -->
             <div id="p1" class="fighter p1 idle">
                 <div class="slash-fx"></div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 440" preserveAspectRatio="xMidYMax meet">
                     <defs>
                         <linearGradient id="skinGrad" x1="0" y1="0" x2="1" y2="1">
                             <stop offset="0%" stop-color="#ff1a1a"/>
@@ -99,32 +88,44 @@
                     </defs>
 
                     <g class="hero-realistic">
+                        <!-- Botas (Agregadas) -->
+                        <path d="M 85 390 L 70 420 L 125 420 L 125 390 Z" fill="#111"/>
+                        <path d="M 165 390 L 165 420 L 220 420 L 205 390 Z" fill="#111"/>
+
+                        <!-- Piernas -->
                         <path d="M 105 260 L 85 390 L 125 390 L 135 260 Z" fill="url(#suitGrad)"/>
                         <path d="M 85 340 L 90 390 L 125 390 L 115 340 Z" fill="var(--x-blue)"/> 
                         <path d="M 145 260 L 165 390 L 205 390 L 180 260 Z" fill="url(#suitGrad)"/>
                         <path d="M 160 340 L 165 390 L 205 390 L 195 340 Z" fill="var(--x-blue)"/> 
+                        
+                        <!-- Brazo y Cuchilla trasera -->
                         <path d="M 165 140 L 210 270" stroke="url(#bladeGrad)" stroke-width="7" stroke-linecap="round"/>
                         <path d="M 155 130 L 175 145" stroke="var(--x-yellow)" stroke-width="5"/> 
+                        
+                        <!-- Torso -->
                         <path d="M 95 125 L 195 125 L 175 260 L 115 260 Z" fill="url(#suitGrad)"/>
                         <path d="M 115 125 L 135 260 L 125 260 L 105 125 Z" fill="var(--x-blue)"/> 
                         <path d="M 175 125 L 155 260 L 165 260 L 185 125 Z" fill="var(--x-blue)"/>
                         
+                        <!-- Cinturón -->
                         <rect x="105" y="250" width="80" height="18" fill="#222" rx="3"/>
                         <circle cx="145" cy="259" r="10" fill="var(--x-yellow)" stroke="#000" stroke-width="2.5"/>
                         <path d="M 141 255 L 149 263 M 149 255 L 141 263" stroke="#000" stroke-width="2"/>
 
+                        <!-- Brazo secundario -->
                         <path d="M 185 130 L 225 200 L 210 250" fill="none" stroke="url(#suitGrad)" stroke-width="16" stroke-linecap="round"/>
                         <circle cx="210" cy="250" r="11" fill="url(#skinGrad)"/>
 
+                        <!-- Cabeza -->
                         <path d="M 130 110 L 160 110 L 165 135 L 125 135 Z" fill="url(#skinGrad)"/>
                         <circle cx="145" cy="85" r="30" fill="url(#skinGrad)"/>
-                        
                         <path d="M 112 85 C 108 25, 182 25, 178 85 L 183 98 C 170 92, 120 92, 107 98 Z" fill="#121212" stroke="none"/>
                         <path d="M 118 70 C 130 55, 160 55, 172 70" stroke="#333" stroke-width="3" fill="none"/> 
                         <path d="M 132 80 L 142 86 M 158 80 L 148 86" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
                         <path d="M 138 98 Q 145 106 152 98" stroke="#400" stroke-width="2.5" fill="none" stroke-linecap="round"/>
                     </g>
 
+                    <!-- Brazo delantero (Ataca) -->
                     <g class="hero-arm-front" style="transform-origin: 105px 135px;">
                         <path d="M 75 230 L 25 50" stroke="url(#bladeGrad)" stroke-width="9" stroke-linecap="round"/>
                         <path d="M 58 210 L 92 225" stroke="var(--x-yellow)" stroke-width="5"/> 
@@ -136,7 +137,7 @@
 
             <!-- JEFE (CENTINELA) -->
             <div id="p2" class="fighter p2 idle">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 500" width="450" height="500">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 680" preserveAspectRatio="xMidYMax meet">
                     <defs>
                         <linearGradient id="sentinelArmor" x1="0" y1="0" x2="1" y2="1">
                             <stop offset="0%" stop-color="#7a00cc"/>
@@ -149,26 +150,40 @@
                         </linearGradient>
                     </defs>
                     <g class="boss-realistic">
+                        <!-- PIERNAS Y PIES (Agregados para cuerpo completo) -->
+                        <path d="M 170 560 L 130 670 L 210 670 L 220 560 Z" fill="url(#sentinelArmor)"/>
+                        <path d="M 280 560 L 320 670 L 240 670 L 230 560 Z" fill="url(#sentinelArmor)"/>
+                        <path d="M 130 670 L 110 680 L 210 680 L 210 670 Z" fill="#222"/>
+                        <path d="M 320 670 L 340 680 L 240 680 L 240 670 Z" fill="#222"/>
+
+                        <!-- CADERA -->
+                        <path d="M 140 480 L 310 480 L 290 570 L 160 570 Z" fill="url(#sentinelMag)"/>
+                        <path d="M 200 480 L 250 480 L 240 550 L 210 550 Z" fill="#111"/>
+
+                        <!-- TORSO SUPERIOR -->
                         <path d="M 90 280 L 360 280 L 330 480 L 120 480 Z" fill="url(#sentinelArmor)"/>
                         
+                        <!-- HOMBROS -->
                         <circle cx="90" cy="280" r="65" fill="url(#sentinelMag)"/>
                         <circle cx="360" cy="280" r="65" fill="url(#sentinelMag)"/>
                         <circle cx="90" cy="280" r="45" fill="url(#sentinelArmor)"/>
                         <circle cx="360" cy="280" r="45" fill="url(#sentinelArmor)"/>
 
+                        <!-- PLACA PECHO -->
                         <path d="M 140 300 L 310 300 L 280 410 L 170 410 Z" fill="url(#sentinelMag)"/>
                         <circle cx="225" cy="355" r="32" fill="var(--x-yellow)" stroke="#111" stroke-width="4"/>
                         <circle cx="225" cy="355" r="15" fill="#fff" opacity="0.8"/>
 
+                        <!-- CUELLO -->
                         <rect x="185" y="220" width="80" height="60" fill="#151515" rx="5"/>
                         <line x1="205" y1="220" x2="205" y2="280" stroke="#000" stroke-width="6"/>
                         <line x1="225" y1="220" x2="225" y2="280" stroke="#000" stroke-width="6"/>
                         <line x1="245" y1="220" x2="245" y2="280" stroke="#000" stroke-width="6"/>
 
+                        <!-- CABEZA -->
                         <path d="M 165 70 L 285 70 L 310 220 L 140 220 Z" fill="url(#sentinelArmor)"/>
                         <path d="M 165 70 L 145 20 L 195 70 Z" fill="url(#sentinelMag)"/>
                         <path d="M 285 70 L 305 20 L 255 70 Z" fill="url(#sentinelMag)"/>
-                        
                         <path d="M 185 110 L 265 110 L 255 205 L 195 205 Z" fill="url(#sentinelMag)"/>
                         
                         <polygon points="195,135 225,142 210,152" fill="var(--x-yellow)" filter="drop-shadow(0 0 8px #ffcc00)"/>
@@ -184,9 +199,7 @@
         </main>
     </div>
 
-    <!-- ==========================================
-         PANEL DE CONTROLES INFERIOR
-         ========================================== -->
+    <!-- PANEL DE CONTROLES INFERIOR -->
     <div class="panel">
         <div class="controls">
             <button id="btn-atk" class="btn btn-atk" onclick="action('atk')" disabled>
@@ -196,14 +209,12 @@
                 <span class="btn-text">DEFENSA</span>
             </button>
             <button id="btn-ult" class="btn btn-ult" onclick="openTrivia()" disabled>
-                <span class="btn-text">ENLACE CEREBRO (PREGUNTAS)</span>
+                <span class="btn-text">ENLACE CEREBRO</span>
             </button>
         </div>
     </div>
 
-    <!-- ==========================================
-         MODAL DE TRIVIA (CEREBRO)
-         ========================================== -->
+    <!-- MODAL DE PREGUNTAS -->
     <div class="modal" id="modal">
         <div class="m-box">
             <h2 class="m-title">SISTEMA CEREBRO: PROTOCOLO DE LICENCIAS</h2>
@@ -212,7 +223,6 @@
         </div>
     </div>
 
-    <!-- Vinculación del JS -->
     <script src="script.js"></script>
 </body>
 </html>
